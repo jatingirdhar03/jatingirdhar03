@@ -183,5 +183,4 @@ The implementation of a Data Analytics Platform (DAP) for the ‘Public Art – 
 
 For more information, visit my [LinkedIn profile](https://www.linkedin.com/in/jatin-girdhar-49b035143).
 
-![image](https://github.com/user-attachments/assets/26c2081b-d45f-4a5b-a14a-f728d1e3d8be)
 
