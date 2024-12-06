@@ -13,6 +13,8 @@ In the era of data-driven decision-making, the ability to extract, process, and 
 For my part, I chose the ‘Public art – Artists’ dataset from [Vancouver Open Data](https://opendata.vancouver.ca/explore/dataset/public-art-artists/information/).
 
 ### Figure 2a
+<img width="846" alt="Screenshot 2024-12-05 at 5 06 59 PM" src="https://github.com/user-attachments/assets/afd075de-b8de-4517-a301-6074dc637edb">
+
 **Original DataSet**
 
 ---
@@ -22,6 +24,8 @@ For my part, I chose the ‘Public art – Artists’ dataset from [Vancouver Op
 The main goal of performing Descriptive Analysis from the available data was to get information regarding the country that has the maximum number of artists in the city of Vancouver. Analyzing this on the Open Data Vancouver website, we get the following column chart, where the maximum number of artists are from Canada (346), followed by the USA (15). This graph should be the target of our Data Analytics process, and the result after all the four steps should match this graph.
 
 ### Figure 2b
+<img width="891" alt="Screenshot 2024-12-05 at 5 07 07 PM" src="https://github.com/user-attachments/assets/c31be3c2-db3e-4f0d-bd8a-a53b008d4d09">
+
 **Column Chart showing the total number of artists from each country.**
 
 ---
@@ -34,17 +38,23 @@ Based on my dataset, to store the data, three buckets were created:
 3. `pa-artist-cur-jat`
 
 ### Figure 2c
+<img width="799" alt="Screenshot 2024-12-05 at 5 07 15 PM" src="https://github.com/user-attachments/assets/b9810e4c-9588-47a6-807e-b4f0016df485">
+
 **Creation of three buckets**
 
 ---
 
 ## Draw.io Representation
 ### Figure 2d
+<img width="812" alt="Screenshot 2024-12-05 at 5 07 21 PM" src="https://github.com/user-attachments/assets/068e8ddc-41d7-427b-acef-ad9618cb91a0">
+
 **Data Analytics Platform (DAP) using draw.io for 1st Pipeline**
 
 The AWS services used in developing this DAP were Amazon S3, AWS Glue DataBrew, and AWS Glue. The figure above illustrates the implementation of different buckets and processes. In this setup, data is initially ingested into a raw bucket on AWS. It then undergoes processing via DataBrew, where profiling and cleaning tasks are completed. The processed output is stored in a transformed (`trf`) bucket. Subsequently, an ETL (Extract, Transform, Load) pipeline utilizes this data to produce final results that are saved in a curated bucket with two folders—`system` and `user`—for use according to specific requirements.
 
 ### Figure 2e
+<img width="605" alt="Screenshot 2024-12-05 at 5 07 28 PM" src="https://github.com/user-attachments/assets/ac8cedb6-7298-4318-bde5-5288ed366bd0">
+
 **draw.io for the 1st pipeline**
 
 ---
@@ -54,6 +64,8 @@ The AWS services used in developing this DAP were Amazon S3, AWS Glue DataBrew, 
 The first step of designing any DAP is to fetch the structured dataset from the source. Data can be uploaded into the raw bucket either in Excel or CSV format; however, as per our requirements, Excel is more suitable.
 
 ### Figure 2f
+<img width="995" alt="Screenshot 2024-12-05 at 5 07 35 PM" src="https://github.com/user-attachments/assets/2ae82bb7-3c14-4891-9f55-11b88f35ebf3">
+
 **Uploading Excel file into the raw bucket**
 
 ---
@@ -63,11 +75,15 @@ The first step of designing any DAP is to fetch the structured dataset from the 
 The next step after feeding the data is Data Profiling, which is done using the AWS ‘Glue DataBrew’ service. It assesses the quality of data ingested and makes changes as per the requirement.
 
 ### Figure 2g
+<img width="988" alt="Screenshot 2024-12-05 at 5 07 42 PM" src="https://github.com/user-attachments/assets/7f33f12c-6fbe-4130-8a15-64714b609503">
+
 **Result of Data Profiling**
 
 First, a dataset is created to establish the connection between the two services. Then, the profiling process is run by creating projects and recipe jobs.
 
 ### Figure 2h
+<img width="924" alt="Screenshot 2024-12-05 at 5 07 48 PM" src="https://github.com/user-attachments/assets/15cbdf10-7f61-4023-88ac-d49543bef910">
+
 **Recipe Jobs**
 
 ---
@@ -77,6 +93,8 @@ First, a dataset is created to establish the connection between the two services
 In this process, data is prepared for analysis by undergoing a cleaning procedure. This involves managing missing data, eliminating duplicates, and addressing formatting issues. My specific dataset had a lot of `null` values in the `Country` column and a few extra columns unnecessary for achieving the desired results. The null values were replaced with `No country`. The clean data is then stored in the `data-cleaning` folder within the `trf` bucket.
 
 ### Figure 2i
+<img width="950" alt="Screenshot 2024-12-05 at 5 07 53 PM" src="https://github.com/user-attachments/assets/d5d2846d-f661-42ba-8915-1e07752534cd">
+
 **Storing the clean data in S3**
 
 ---
@@ -86,11 +104,21 @@ In this process, data is prepared for analysis by undergoing a cleaning procedur
 A pipeline is utilized to perform ETL (Extract, Transform, Load) operations on the transformed data from Steps 2 and 3. The result of this process is referred to as analytical data. In our case, the initial step involves retrieving the cleaned data from the transform bucket and starting the elimination of unnecessary columns. Post this, the count function is applied to calculate the total number of artists by grouping them country-wise. This information is stored in two folders created in the curated bucket—one for the system and another for the user.
 
 ### Figure 2j
+<img width="983" alt="Screenshot 2024-12-05 at 5 08 01 PM" src="https://github.com/user-attachments/assets/01e5759f-b59e-4b49-8d0b-6d2abf9d0080">
+
 **1st ETL Pipeline**
 
 ### Figure 2k
+<img width="1014" alt="Screenshot 2024-12-05 at 5 08 08 PM" src="https://github.com/user-attachments/assets/e9ede00d-d66a-4ee3-bd60-4b4c5e9b05a6">
+
 **Final Result**
 
+<img width="487" alt="Screenshot 2024-12-05 at 5 08 14 PM" src="https://github.com/user-attachments/assets/cf2c4ab9-2e89-4fbb-8d91-ccfb297f3766">
+<img width="936" alt="Screenshot 2024-12-05 at 5 08 22 PM" src="https://github.com/user-attachments/assets/7a8636bf-020a-4e87-b8a8-eec3e0a54959">
+<img width="926" alt="Screenshot 2024-12-05 at 5 08 30 PM" src="https://github.com/user-attachments/assets/8778e004-11d8-436c-ab7f-8aa5949c07da">
+<img width="897" alt="Screenshot 2024-12-05 at 5 08 37 PM" src="https://github.com/user-attachments/assets/e617d18f-c2bf-49a3-b95f-bfb37f53efaa">
+<img width="949" alt="Screenshot 2024-12-05 at 5 08 44 PM" src="https://github.com/user-attachments/assets/1bebde86-41e5-4b47-b8a8-d04997c2da65">
+<img width="699" alt="Screenshot 2024-12-05 at 5 08 53 PM" src="https://github.com/user-attachments/assets/9fdf7514-ff3d-424e-b30d-be2b118b1f5c">
 ---
 
 ## Exploratory Analysis
