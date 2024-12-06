@@ -113,12 +113,6 @@ A pipeline is utilized to perform ETL (Extract, Transform, Load) operations on t
 
 **Final Result**
 
-<img width="487" alt="Screenshot 2024-12-05 at 5 08 14 PM" src="https://github.com/user-attachments/assets/cf2c4ab9-2e89-4fbb-8d91-ccfb297f3766">
-<img width="936" alt="Screenshot 2024-12-05 at 5 08 22 PM" src="https://github.com/user-attachments/assets/7a8636bf-020a-4e87-b8a8-eec3e0a54959">
-<img width="926" alt="Screenshot 2024-12-05 at 5 08 30 PM" src="https://github.com/user-attachments/assets/8778e004-11d8-436c-ab7f-8aa5949c07da">
-<img width="897" alt="Screenshot 2024-12-05 at 5 08 37 PM" src="https://github.com/user-attachments/assets/e617d18f-c2bf-49a3-b95f-bfb37f53efaa">
-<img width="949" alt="Screenshot 2024-12-05 at 5 08 44 PM" src="https://github.com/user-attachments/assets/1bebde86-41e5-4b47-b8a8-d04997c2da65">
-<img width="699" alt="Screenshot 2024-12-05 at 5 08 53 PM" src="https://github.com/user-attachments/assets/9fdf7514-ff3d-424e-b30d-be2b118b1f5c">
 ---
 
 ## Exploratory Analysis
@@ -131,9 +125,13 @@ Due to the limitations in the dataset, there wasn’t much scope for exploratory
 A new pipeline is created in the DAP platform for this purpose.
 
 ### Figure 2l
+<img width="487" alt="Screenshot 2024-12-05 at 5 08 14 PM" src="https://github.com/user-attachments/assets/cf2c4ab9-2e89-4fbb-8d91-ccfb297f3766">
+
 **Data Analytics Platform (DAP) using draw.io for 2nd pipeline**
 
 ### Figure 2m
+<img width="936" alt="Screenshot 2024-12-05 at 5 08 22 PM" src="https://github.com/user-attachments/assets/7a8636bf-020a-4e87-b8a8-eec3e0a54959">
+
 **draw.io for the 2nd Pipeline**
 
 ---
@@ -149,6 +147,8 @@ Since I’m using the same data source, this step is the same as in ‘Descripti
 AWS Glue DataBrew performs data profiling to assess data quality and saves the results in the transformed S3 bucket.
 
 ### Figure 2n
+<img width="926" alt="Screenshot 2024-12-05 at 5 08 30 PM" src="https://github.com/user-attachments/assets/8778e004-11d8-436c-ab7f-8aa5949c07da">
+
 **Data Profiling Success**
 
 ---
@@ -164,9 +164,13 @@ Since the data was already cleaned in the ‘Descriptive Analysis’, there was 
 For exploratory analysis, instead of using `Aggregate` in the ETL pipeline, I used the `Filter` option and matched the results based on the value `Canada` OR `USA`. This gave all the artists from ‘North America’.
 
 ### Figure 2o
+<img width="897" alt="Screenshot 2024-12-05 at 5 08 37 PM" src="https://github.com/user-attachments/assets/e617d18f-c2bf-49a3-b95f-bfb37f53efaa">
+
 **2nd ETL Pipeline**
 
 ### Figure 2p
+<img width="949" alt="Screenshot 2024-12-05 at 5 08 44 PM" src="https://github.com/user-attachments/assets/1bebde86-41e5-4b47-b8a8-d04997c2da65">
+<img width="699" alt="Screenshot 2024-12-05 at 5 08 53 PM" src="https://github.com/user-attachments/assets/9fdf7514-ff3d-424e-b30d-be2b118b1f5c">
 **Final Result**
 
 ### Conclusion
