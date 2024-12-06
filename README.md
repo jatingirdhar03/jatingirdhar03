@@ -177,3 +177,9 @@ For exploratory analysis, instead of using `Aggregate` in the ETL pipeline, I us
 
 The implementation of a Data Analytics Platform (DAP) for the ‘Public Art – Artists’ dataset illustrates the power of cloud-based tools in transforming raw data into actionable insights. Through a step-by-step process encompassing data ingestion, profiling, cleaning, and pipeline design, this project achieved its primary goals of identifying the country-wise distribution of artists and analyzing North American contributions. The use of AWS services streamlined the data lifecycle, from ingestion in S3 buckets to processing via Glue DataBrew and final transformation using ETL pipelines. These findings emphasize the importance of robust data management practices in uncovering trends and supporting informed decision-making. This project not only highlights the technical capabilities of AWS but also showcases the broader implications of data analytics in understanding cultural and artistic contributions. Future projects can build on this foundation to explore more complex datasets and incorporate advanced analytics techniques.
 
+
+
+---
+
+For more information, visit my [LinkedIn profile](https://www.linkedin.com/in/jatin-girdhar-49b035143).
+
